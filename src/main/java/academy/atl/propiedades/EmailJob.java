@@ -1,2 +1,11 @@
-package academy.atl.propiedades;public class EmailJob {
+package academy.atl.propiedades;
+
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+
+@EnableScheduling
+public class EmailJob {
+    @Scheduled(cron = "0 0 3 ? * MON")
+    public void enviarCampanaDeMarketing() {
+    }
 }
