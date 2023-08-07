@@ -34,38 +34,11 @@ public class PropiedadController {
     @GetMapping("/api/propiedad/{id}")
     public Propiedad get(@PathVariable("id") Long id){
         // lógica para mostrar o traer un propiedad que se encuentra en la base de datos
-        Propiedad propiedad = new Propiedad();
-        propiedad.setId(1L);
-        propiedad.setAnio("1945");
-        propiedad.setBanios("3");
-        propiedad.setDescripcion("Hermoso departamento al frente de la playa");
-        propiedad.setLongitud("-11.9485243");
-        propiedad.setLatitud("-77.0922908");
-        return propiedad;
+        return propiedadService.get(id);
     }
-
 
     @GetMapping("/api/propiedad")
     public List<Propiedad> getAll(){
-        List<Propiedad> listPropiedad = new ArrayList<>();
-        Propiedad propiedad1 = new Propiedad();
-        propiedad1.setId(1L);
-        propiedad1.setAnio("1946");
-        propiedad1.setBanios("3");
-        propiedad1.setDescripcion("Hermoso departamento al frente de la playa 2");
-        propiedad1.setLongitud("-11.9485283");
-        propiedad1.setLatitud("-77.0922918");
-        listPropiedad.add(propiedad1);
-
-        Propiedad propiedad2 = new Propiedad();
-        propiedad2.setId(1L);
-        propiedad2.setAnio("1948");
-        propiedad2.setBanios("3");
-        propiedad2.setDescripcion("Hermoso departamento al frente de la playa 3");
-        propiedad2.setLongitud("-11.9485273");
-        propiedad2.setLatitud("-77.0922948");
-        listPropiedad.add(propiedad2);
-
-        return listPropiedad;
+        return propiedadService.getAll();
     }
 }
